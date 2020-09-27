@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parser": "babel-eslint",
+  "settings": {
+    "react" :{
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "require": true,
+    "process": true,
+    "exports": true,
+    "__dirname": true
+  }
+}

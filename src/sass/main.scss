@@ -1,0 +1,124 @@
+@import './colours';
+
+* {
+  font-family: $font-body;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.header,
+.content,
+.footer {
+  padding: 10px;
+}
+
+.header,
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  background-color: $color-teal;
+  grid-area: header;
+  text-align: center;
+  vertical-align: middle;
+
+  h1 {
+    font-family: $font-title;
+    font-size: 60px;
+  }
+}
+
+.navbar {
+  background-color: $color-blue-dark;
+  grid-area: navbar;
+
+  ul,
+  ul li {
+    padding: 10px;
+  }
+
+  ul {
+    li {
+      display: inline;
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: $color-orange;
+
+        a {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  background-color: $color-grey-dark;
+  grid-area: main-content;
+  padding-bottom: 30px;
+
+  p ~ p {
+    margin-top: 10px;
+  }
+}
+
+.footer {
+  background-color: $color-teal;
+  grid-area: footer;
+}
+
+.root {
+  display: grid;
+  grid-template-areas:
+    '. left-shadow header right-shadow .'
+    '. left-shadow navbar right-shadow .'
+    '. left-shadow main-content right-shadow .'
+    '. left-shadow footer right-shadow .';
+  grid-template-columns: auto 30px 900px 30px auto;
+  grid-template-rows: 100px 40px auto 100px;
+  height: 100%;
+
+  > .header,
+  > .navbar,
+  > .content,
+  > .footer {
+    border-left: 2px solid $color-navy-dark;
+    border-right: 2px solid $color-navy-dark;
+  }
+}
+
+.post {
+  display: grid;
+  grid-template-areas:
+    '. title author .'
+    '. post-content post-content .';
+  grid-template-columns: 40px 4fr 1fr 40px;
+  grid-template-rows: minmax(30px, max-content) auto;
+  margin-top: 20px;
+
+  .post-title {
+    grid-area: title;
+  }
+
+  .post-author {
+    grid-area: author;
+    text-align: right;
+  }
+
+  .post-content {
+    grid-area: post-content;
+  }
+}

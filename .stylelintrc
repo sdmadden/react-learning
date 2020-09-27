@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "max-nesting-depth": 5,
+    "selector-max-compound-selectors": 5
+  },
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines"
+  ]
+}
